@@ -1,0 +1,765 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none; color: #000;
+}
+
+.video {
+    position: fixed;
+    /* 비디오를 화면 전체에 고정 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    z-index: 9999;
+    
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 비디오가 화면을 꽉 채우도록 설정 */
+}
+
+#skipButton {
+    position: absolute;
+    bottom: 20px;
+    /* 화면 하단에서 20px 거리 */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+.quickMenu {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9998;
+}
+
+.quickTopBtn {
+    position: absolute; /* quickMenu 안에서 절대 위치로 설정 */
+    bottom: 80px; /* quickMenu의 하단에 위치 */
+    right: 0; /* quickMenu의 오른쪽에 위치 */
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 2px solid #001F3F;
+    border-radius: 50%;
+    color: #001F3F;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.quickTopBtn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.chatBotBtn {
+    position: absolute; /* quickMenu 안에서 절대 위치로 설정 */
+    bottom: 0px; /* quickTopBtn 위에 80px 간격으로 위치 */
+    right: 0; /* quickMenu의 오른쪽에 위치 */
+    width: 60px;
+    height: 60px;
+    background: #001F3F;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 중앙 정렬 */
+    cursor: pointer;
+    margin-top: 10px; /* quickTopBtn과 간격을 줌 */
+}
+
+#header {
+    background-color: #001F3F;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 8888;
+}
+
+/* .login {position: absolute;
+        top:30px;
+        right:100px;
+        z-index: 999;
+        }
+.login a{color:white;
+font-weight: bold;} */
+
+    #header {
+        
+    }
+    /*헤더*/    
+    h1 img { margin: 10px; }
+    
+    /*네비게이션*/
+    .gnb {
+    position: absolute;
+    top: 30px;
+    left:300px;
+    }
+    .gnb li {
+    display: inline-block;
+    margin-right: 40px;
+    }
+    .gnb li a {
+    font-weight: bold;
+    font-size: 20px;
+    color:#fff;
+    }
+    .gnb li:hover a {
+    color: #aaa;
+    }
+    .hamBtn {
+        display: none;
+    }
+    .sns {
+        position: absolute;
+        top: 35px;
+        right: 120px;
+    }
+        .sns li{
+            display: inline;
+            margin-right: 20px;
+        }
+
+    .indexLogin {
+        position: absolute;
+        top:32px;
+        right: 50px;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+.mainimage{
+    position: relative;
+    left: 40%;
+}
+
+.mainletter {
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 650px;
+    left: 50px;
+    letter-spacing: -5px;
+
+}
+
+.mainletter span {
+    color: #FF7E4B;
+}
+
+#container {}
+
+
+#second {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mentimg img {
+    width: 100%;
+    height: 100vh;
+}
+
+.towerment {
+    position: absolute;
+    top: 100px;
+    left: 10%
+}
+
+.towerment p {
+    color: white;
+    font-size: 70px;
+    letter-spacing: -5px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.ment1 {
+    position: relative;
+    left: 150px;
+}
+
+.ment1 span {
+    color: #001F3F;
+}
+
+/* #locamark {display: none;} */
+.loca1 {
+    position: absolute;
+    top: 400px;
+    left: 150px;
+}
+
+.loca2 {
+    position: absolute;
+    top: 600px;
+    left: 500px;
+}
+
+.loca3 {
+    position: absolute;
+    top: 400px;
+    left: 1600px;
+}
+
+.loca4 {
+    position: absolute;
+    top: 780px;
+    left: 1300px;
+}
+
+.loca1,
+.loca3 {
+    animation: loca1 3s 0s infinite;
+}
+
+@keyframes loca1 {
+    0% {
+        top: 400px;
+        opacity: 0;
+    }
+
+    50% {
+        top: 450px;
+        opacity: 1;
+    }
+
+    51% {
+        top: 449px;
+        opacity: 0.8;
+    }
+
+    100% {
+        top: 400px;
+        opacity: 0;
+    }
+}
+
+.loca2 {
+    animation: loca2 3s 0s infinite;
+}
+
+@keyframes loca2 {
+    0% {
+        top: 600px;
+        opacity: 0;
+    }
+
+    50% {
+        top: 650px;
+        opacity: 1;
+    }
+
+    51% {
+        top: 649px;
+        opacity: 0.8;
+    }
+
+    100% {
+        top: 600px;
+        opacity: 0;
+    }
+}
+
+.loca4 {
+    animation: loca4 3s 0s infinite;
+}
+
+@keyframes loca4 {
+    0% {
+        top: 780px;
+        opacity: 0;
+    }
+
+    50% {
+        top: 810px;
+        opacity: 1;
+    }
+
+    51% {
+        top: 809px;
+        opacity: 0.8;
+    }
+
+    100% {
+        top: 780px;
+        opacity: 0;
+    }
+}
+
+.ment1 span {
+    display: inline-block;
+    animation: ment1 3s 0s infinite;
+}
+
+@keyframes ment1 {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+#third {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+#third {
+    background-image: url("../images/bgbg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 999;
+}
+.left h1 {
+    color:#FF7E4B;}
+.left span {
+    color: #001F3F;
+}
+
+.left {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    opacity: 0;
+    transform: translateY(-200px);
+    transition: opacity 3s ease, transform 3s ease;
+    /* 트랜지션 추가 */
+}
+
+.left.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.right {
+    width: 55%;
+    position: relative;
+}
+
+section {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+article {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    background: url(../images/divider.png) no-repeat left center;
+    float: right;
+    overflow: hidden;
+    /* border:1px solid red; */
+}
+
+/* float:right; -- 첫번째 article부터 오른쪽에 배치. */
+
+/* article 제목 */
+article h2 {
+    position: absolute;
+    top: 300px;
+    left: 20%;
+    padding-left: 15px;
+    border-left: 3px solid #FF7E4B;
+    font: bold 20px Raleway;
+    color: #001F3F;
+    z-index: 3;
+    transition: all 0.2s;
+}
+
+article div {
+    position: absolute;
+    left: 0px;
+    top: 300px;
+    width: 100%;
+    height: 0px;
+    background: #FF7E4B;
+    opacity: 0.5;
+    z-index: 2;
+    transition: all 0.7s;
+}
+
+/* article 제목 호버 효과 */
+article:hover h2 {
+    color: #001F3F;
+    border-left: 3px solid #fff;
+    left: 20px;
+}
+
+article:hover div {
+    top: 270px;
+    height: 70px;
+}
+
+/* article 사진 */
+article img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    margin-top: 0px;
+    margin-left: -100px;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 마우스 커서 변경 */
+article {
+    cursor: url(../images/moreView.png), auto;
+}
+
+
+
+article h3 {
+    position: absolute;
+    bottom: 110px;
+    right: -310px;
+    font-weight: bold;
+    font-size: 200%;
+    color: #c1e0ff;
+    text-align: right;
+    opacity: 1;
+    z-index: 4;
+}
+
+article:nth-of-type(2) h3 {
+    color: #001F3F;
+}
+
+article:nth-of-type(1) h3 {
+    color: #001F3F;
+}
+
+article:nth-of-type(2) p {
+    color: black;
+    font-weight: bold;
+}
+
+article p {
+    font-weight: bold;
+    position: absolute;
+    bottom: -50px;
+    right: -310px;
+    width: 300px;
+    height: 150px;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: right;
+    opacity: 0.8;
+    z-index: 5;
+}
+
+/* right:-310px; 해당 영역 밖으로 숨겨 놓았다. article p에 width:300px;와 height:150px;를 주지 않으면 bottom:50px;에 의해 p위쪽이 들쑥날쑥해진다. */
+
+
+
+.box2 {
+    /* background: url("../images/box2.png") no-repeat;
+    background-size: cover; */
+    background-color: antiquewhite;
+}
+
+/* .box1 {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    background-color: #FF7E4B;
+}
+
+.box2 {
+    position: absolute;
+    top: 100px;
+    left: 600px;
+}
+
+.box3 {
+    position: absolute;
+    top: 450px;
+    left: 200px;
+    background-color: #001F3F;
+}
+
+.box4 {
+    position: absolute;
+    top: 550px;
+    left: 600px;
+    background-color: #b6b6b6;
+} */
+
+#addpage {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#addpage img {
+    position: absolute;
+    top: 10%;
+    width: 50%;
+    left: -40%; /* 처음에는 화면 왼쪽 밖에 위치하도록 설정 */
+    opacity: 0; /* 보이지 않게 설정 */
+    transition: all 1.5s ease-in-out; /* 애니메이션 효과 */
+}
+
+#addpage img.slide-in {
+    left: 0; /* 이미지가 제자리로 돌아오도록 설정 */
+    opacity: 1; /* 이미지가 보이도록 설정 */
+}
+
+#addpage p {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#addpage p span {
+    background-color: #FF7E4B;
+    color: white;
+}
+#fourth {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.bggh img{
+    width: 100%;
+    height: 100vh;
+}
+
+.mainimg img {
+     position: absolute;
+    top:0px;
+    right: 0;
+    width: 70%;
+    height: 950px;
+}
+
+.fment {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 80px;
+    color: #001F3F;
+    letter-spacing: -10px;
+}
+
+.fment img {
+    width: 300px;
+    height: 100px;
+    margin-left: 60px;
+}
+
+.fment span {
+    color: #FF7E4B;
+    font-weight: bold;
+    position: relative;
+    top: -50px;
+    display: inline-block;
+    animation: fment 2s 0s infinite;
+}
+
+@keyframes fment {
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.appbtn {
+    list-style: none;
+    position: absolute;
+    top:70%;
+    left:10%;
+}
+.appbtn img {width: 400px;}
+
+.appbtn li {
+    display: inline-block; 
+    margin-right: 30px; 
+}
+
+.appbtn li:last-child {
+    margin-right: 0; 
+}
+
+.appbtn img:hover {
+    transform: scale(1.1);
+    transition: all 1s ease;
+}
+
+
+
+#fifth {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#fifthMent {
+    text-align: center;
+    font-size: 55px;
+    letter-spacing: -5px;
+    transform: 'translateY(-20px)';
+    height: 30%;
+}
+
+#fifthMent img {
+    border-radius: 20px;
+}
+
+#fifthMent span {
+    color: #FF7E4B;
+    font-weight: bold;
+    font-size: 50px;
+
+}
+
+#fifth ul {
+    background-color: #001F3F;
+    width: 100%;
+    height: 70%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.countMent {
+    padding-top: 50px;
+    transform: 'translateY(-20px)'
+}
+
+#fifth ul p span {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+#fifth p {
+    color: white;
+}
+
+
+#fifth li {
+    height: 300px;
+    display: inline-block;
+    color: white;
+    font-size: 55px;
+    position: relative;
+    margin-top: 100px;
+    padding: 0px 10px;
+}
+
+
+#fifth li {
+   margin-right: 70px;
+}
+#fifth li:last-child{
+    margin: 0;
+}
+#fifth li h1 {
+    color: #FF7E4B;
+    font-size: 100px;
+}
+
+.plus {
+    position: absolute;
+    top: -5px;
+    right: -50px;
+    font-size: 80px;
+}
+
+#fifth li p {
+    font-size: 25px;
+}
+
+#fifth ul p {
+    font-size: 30px;
+}
+
+#fifth ul p span {
+    font-weight: bold;
+}
+
+
+    /*풋터*/
+    #footer{
+        background-color: #D9D9D9; 
+        text-align: center; 
+        width: 100%;
+    }
+        #foot {
+            height: 140px; 
+        }
+            #foot ul { margin-bottom: 5px; }
+            #foot ul.flfl li{ padding-right: 10px;}
+            #foot ul.flfl li:last-child { padding-right: 0px;}
+                #foot ul li{ display: inline; }
+                    .flfl li.bold {
+                        font-weight: bold;
+                        text-decoration: underline;
+                    }
+            #foot h2 span{ font-size: 16px;}
+            address{
+                text-align: center;
+                color: gray;
+                margin-top: 10px;
+                font-style: normal;
+            }
